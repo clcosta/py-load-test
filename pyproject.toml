@@ -1,0 +1,16 @@
+[project]
+name = "py-load-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.2",
+    "pyjwt>=2.9.0",
+    "taskipy>=1.13.0",
+]
+
+[tool.taskipy.tasks]
+run = 'fastapi dev'
+start = 'fastapi run'
+gatlingTest = 'cd ./testing/typescript && npx gatling run --simulation api-simulation'
